@@ -1,3 +1,4 @@
+
 function loco(){
 gsap.registerPlugin(ScrollTrigger);
 
@@ -78,11 +79,15 @@ t1.from(".line1-part1 h5", {
 
 
 
+document.body.classList.add("loading");
 
 t1.to("#loader",{
-    opacity : 0,
-    delay : 2.6,
-    duration : 1.5 
+    opacity: 0,
+    delay: 2.6,
+    duration: 1.5,
+    onComplete: function () {
+        document.body.classList.remove("loading");
+    }
 })
 
 
